@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.whatsappclone">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,21 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
-        <activity android:name=".SplashScreen1"
+        <activity android:name=".Register"></activity>
+        <activity
+            android:name=".SplashScreen1"
             tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SplashScreen2"></activity>
+        <activity android:name=".SplashScreen2" />
         <activity android:name=".entermobnumber" />
         <activity android:name=".Verificationonotp" />
         <activity android:name=".IntroActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".IntroActivity"
+        <activity
+            android:name=".IntroActivity"
             tools:ignore="DuplicateActivity" />
 
         <meta-data

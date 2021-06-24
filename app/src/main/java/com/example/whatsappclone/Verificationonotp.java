@@ -76,7 +76,7 @@ public class Verificationonotp extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 verify.setVisibility(View.VISIBLE);
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    startActivity(new Intent(getApplicationContext(), Register.class));
                                 } else {
                                     Toast.makeText(Verificationonotp.this, "Enter Correct OTP", Toast.LENGTH_SHORT).show();
                                 }
