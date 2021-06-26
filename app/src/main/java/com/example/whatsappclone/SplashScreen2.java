@@ -19,6 +19,7 @@ public class SplashScreen2 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         if(restorepref())
         {
@@ -49,6 +50,10 @@ public class SplashScreen2 extends AppCompatActivity {
                 savedprefsData();
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     private Boolean restorepref()

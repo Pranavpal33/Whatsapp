@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -23,16 +26,19 @@ public class entermobnumber extends AppCompatActivity {
     EditText phonenumber;
     Button getotp;
     ProgressBar progressBar;
+    FirebaseAuth fAuth;
+    FirebaseUser userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entermobnumber);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         phonenumber = findViewById(R.id.Input_mobile_number);
         getotp = findViewById(R.id.buttongetotp);
         progressBar = findViewById(R.id.otp_sending_progressbar);
-
+        fAuth=FirebaseAuth.getInstance();
 
         getotp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +90,21 @@ public class entermobnumber extends AppCompatActivity {
                 );
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        userid=fAuth.getCurrentUser();
+        if(userid!=null)
+        {
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }

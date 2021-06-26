@@ -13,8 +13,6 @@ public class Upload {
         {
             name="No Name";
         }
-
-
         mName=name;
         mImageUrl=imageurl;
     }
