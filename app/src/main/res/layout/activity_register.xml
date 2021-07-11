@@ -21,15 +21,14 @@
         android:id="@+id/Enter_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Add_Img"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintTop_toBottomOf="@+id/Add_Img" />
 
     <Button
         android:id="@+id/DONE"
@@ -42,5 +41,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Enter_Name"
         app:layout_constraintVertical_bias="0.699" />
+
+    <EditText
+        android:id="@+id/StatusId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Status"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/DONE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Enter_Name"
+        app:layout_constraintVertical_bias="0.188" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

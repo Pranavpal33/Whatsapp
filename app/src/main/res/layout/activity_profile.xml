@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/viewimage"
+        android:layout_width="130dp"
+        android:layout_height="129dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/updateImage"
+        android:layout_width="79dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewimage"
+        app:layout_constraintEnd_toEndOf="@+id/viewimage"
+        app:layout_constraintStart_toEndOf="@+id/viewimage"
+        app:layout_constraintTop_toTopOf="@+id/viewimage"
+        app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
+
+    <TextView
+        android:id="@+id/EditName"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="96dp"
+        android:hint="Name"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewimage" />
+
+    <TextView
+        android:id="@+id/EditStatus"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:hint="Status"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditName"
+        app:layout_constraintVertical_bias="0.206" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

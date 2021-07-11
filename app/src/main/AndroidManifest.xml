@@ -12,13 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity android:name=".Profile"
+            android:parentActivityName=".Settings"/>
         <activity
             android:name=".Settings"
             android:parentActivityName=".Chats" />
-        <activity android:name=".New_Broadcast"
-            android:parentActivityName=".Chats"/>
-        <activity android:name=".New_Group"
-            android:parentActivityName=".Chats"/>
+        <activity
+            android:name=".New_Broadcast"
+            android:parentActivityName=".Chats" />
+        <activity
+            android:name=".New_Group"
+            android:parentActivityName=".Chats" />
         <activity android:name=".status" />
         <activity android:name=".Calls" />
         <activity android:name=".Chats" />

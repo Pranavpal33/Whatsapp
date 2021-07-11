@@ -29,13 +29,14 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     ImageView Add_Img;
-    EditText Add_Name;
+    EditText Add_Name,Add_status;
     Button Done;
     Uri ImageUri;
     String UserId;
@@ -57,6 +58,7 @@ public class Register extends AppCompatActivity {
         Done = findViewById(R.id.DONE);
         fStore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
+        Add_status=findViewById(R.id.StatusId);
 
         UserId = fAuth.getCurrentUser().getUid();
         storageReference = FirebaseStorage.getInstance().getReference(UserId);
@@ -87,7 +89,7 @@ public class Register extends AppCompatActivity {
     private void uploadFile() {
 
         if (ImageUri != null) {
-            StorageReference fileReference = storageReference.child(System.currentTimeMillis()  + "." + getFileExt(ImageUri));
+            StorageReference fileReference = storageReference.child( "Picture." + getFileExt(ImageUri));
             fileReference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -103,12 +105,9 @@ public class Register extends AppCompatActivity {
             documentReference=fStore.collection("users").document(UserId);
             Map<String,String> user=new HashMap<>();
             user.put("Name",Add_Name.getText().toString().trim());
-            user.put("URI",ImageUri.toString());
+            user.put("Status",Add_status.getText().toString().trim());
             documentReference.set(user);
-
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
-
         }
         else {
             Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
